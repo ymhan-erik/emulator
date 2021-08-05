@@ -1,0 +1,4 @@
+
+1. PPS_IN으로 받아서 PPS_OUT으로 나오면 150ns 차이.
+2. TX 측 Vlanmatch_cnt는 pcap_player의 프레임카운트 수
+  
