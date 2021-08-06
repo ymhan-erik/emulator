@@ -44,12 +44,17 @@ ls
 ![image](https://user-images.githubusercontent.com/45474081/128466084-5329e9e3-5ee7-4521-a2a7-2eaed67dcb7c.png)
   
   
-  Tx frame number per 1-sec : 1초당 재생되는 프레임수를 나타낸다. 정상이면 min과 max는 같고, acc를 계속증가한다. 
+  Tx frame number per 1-sec : 1초당 재생되는 프레임수를 나타낸다. 
+      정상이면, 1초당 재생되는 프레임 수의 min과 max는 같고, acc는 계속 증가 한다.
     
-  "Packet Count Check"를 보면  byte 카운트가 증가하면 정상이다.   
-      포트를 서로 연결했기 때문에, tx/rx 포트의 bytecount가 비슷하게 증가한다.
-      *rx쪽 VlanidMatch가 증가하면 packet을 덤프할수 있다.*  
-      *이게 증가하지 않으면 덤프할수 있는 패킷이 없는 것이다. *  
+  "Packet Count Check"를 보면  byte 카운트가 증가하는게 보일 것이다. 정상이다.   
+       포트를 서로 연결했기 때문에, TX/RX 포트의 "bytecount"가 비슷하게 증가한다.
+      RX쪽 "VlanidMatch"가 증가하면 packet을 덤프 할 수 있다.
+      "VlanidMatch"가 증가하지 않으면 덤프 할 있는 패킷이 없는 것이다.
+           
+         만일, RX Byte 카운트는 크게 증가하는데, "VlanidMatch"가 증가하지 않으면 vlan.id와 vlan.type이 안맞는 경우이다.
+         이 경우 "3. diag_hubsetvl 사용해보기"를 살펴보고 맞춰준다.
+         
       
 ## 2-4 패킷을  dram 덤프 해보자.  
 ./emul_capture 8 0
@@ -78,18 +83,42 @@ ls ./util
 와이어샤크로 열어보면, 저장된 데이타를 볼 수 있다.
     
 
-# 따리하기 끝, 궁금한 사항은 0105307798, erik@info-cube.co.kr로 문의하세요.
+## 2-x 따리하기 끝, 궁금한 사항은 0105307798, erik@info-cube.co.kr로 문의하세요.
 
-
-
-
-
-
-
-
-
+ 
+ 
   
+ 
+# 3. diag_hubsetvl 사용해보기.
+rx 바이트카운트가 확!확! 크게 증가하는데, "VlanidMatch"가 증가하지 않는 경우에 이항을 참조한다.  
+에뮬레이터에 덤프기능은 수신하는 패킷중에서 vlan.id, vlan.type이 맞는 uplan 패킷만 덤프 할 수 있다.
+
+    "수신하는 패킷"은 rx Byte 카운트 증가시킨다.
+    "수신하는 패킷중"에서 vlan.id, vlan.type이 맞는 패킷 : "VlanidMatch" 증가 <- 이것이 증가되면 덤프가 가능하다.ㅁㄴ
+
+## 3-1. 캡처 할 패킷에 vlan.id = 0x3e8 vlan.type = 0xaefe 인 경우
+
+  ./diag_hubsetvl -h  
+  ![image](https://user-images.githubusercontent.com/45474081/128468953-4ffc2308-1a8b-450d-b123-7780cd0c68d4.png)  
+    
+  ./diag_hubsetvl 0 1 1 0x03E8 0xAEFE  
+  ![image](https://user-images.githubusercontent.com/45474081/128468992-ddf7b9b7-9352-4591-b366-a84c7ba2c57d.png)  
+     
+     
+## 3-1. 캡처 할 패킷에 vlan.type = 0xaefe 하나인데. vlan.id 가 4개인경우, 0x0000, 0x0010, 0x03e8, 00798  
+  ./diag_hubsetvl **0** 1 1 0x0000 0xAEFE
+  ./diag_hubsetvl **1** 1 1 0x0010 0xAEFE
+  ./diag_hubsetvl **2** 1 1 0x03e8 0xAEFE
+  ./diag_hubsetvl **3** 1 1 0x0798 0xAEFE
   
+  다음 그림처럼 나오면 정상이다.
+  ![image](https://user-images.githubusercontent.com/45474081/128469499-8d343ff9-440e-4517-910d-947a0cc70534.png)
+
+
+## 이렇게 하고도  rx 바이트카운트가 확!확! 크게 증가하는데, "VlanidMatch"가 증가하지 않는 경우.
+**들어오는 패킷에 vlan.type, vlan.id가 맞지 않거나, 다른 타입에 패킷이 들어오는 것이다**   
+   
+## 끝, 궁금한 사항은 0105307798, erik@info-cube.co.kr로 문의하세요.
   
   
   
