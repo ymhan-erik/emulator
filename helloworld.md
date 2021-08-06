@@ -76,7 +76,7 @@ ls ./util
    
    
    
-ls ./util
+ls ./util  
 ![image](https://user-images.githubusercontent.com/45474081/128466982-70234dca-cb3f-44d7-9d83-0a257fbebb83.png)  
     
 그림에서 *ultest_102_br0.pcapng*파일이 생긴것이 보일것이다.   
