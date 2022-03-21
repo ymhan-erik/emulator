@@ -16,19 +16,19 @@
   2022년  1월 이후에 납품된 모델은 v3.2
 
 **Version 3.2**  
-      FPGA Bitstream Date     : 20220317
+      FPGA Bitstream Date     : 20220317  
       FPGA Bitstream Version  : 00032000 (v3.2)
       
 **Version 3.0**  
-      FPGA Bitstream Date     : 20210804
+      FPGA Bitstream Date     : 20210804  
       FPGA Bitstream Version  : 00030002 (v3.0)
       
 **Version 2.x**  
-      FPGA Bitstream Date     : 20201013
+      FPGA Bitstream Date     : 20201013  
       FPGA Bitstream Version  : 10021000 (v2.1)
  
 **Version 1.x**  
-      FPGA Bitstream Date     : 20201013
+      FPGA Bitstream Date     : 20201013  
       FPGA Bitstream Version  : 10011000  (v1.1)
 
 
