@@ -15,6 +15,11 @@
   2021년  8월 이전에 납품된 모델은 v2.x or v3.0  
   2022년  1월 이후에 납품된 모델은 v3.2  
 
+
+**Version 3.3**  
+      FPGA Bitstream Date     : 20220421
+      FPGA Bitstream Version  : 00033000 (v3.3)
+      
 **Version 3.2**  
       FPGA Bitstream Date     : 20220317  
       FPGA Bitstream Version  : 00032000 (v3.2)
@@ -38,3 +43,4 @@
 |2.x|v2.0|x|x|4v1| | 
 |3.0|v2.0|지원|지원|7V3| |
 |3.2|V2.0|지원|지원|7V3|  22년 생산분에서 sysclk_pps와 ptpclk_pps 간 동기가 안되는 문제 해결 |
+|3.2|V2.0|지원|지원|7V3|  25G/10G 지원 |
