@@ -17,8 +17,8 @@
 
 
 **Version 3.3**  
-      FPGA Bitstream Date     : 20220421
-      FPGA Bitstream Version  : 00033000 (v3.3)
+      FPGA Bitstream Date     : 20220421   
+      FPGA Bitstream Version  : 00033000 (v3.3)   
       
 **Version 3.2**  
       FPGA Bitstream Date     : 20220317  
