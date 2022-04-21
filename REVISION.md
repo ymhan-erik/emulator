@@ -10,34 +10,33 @@
 ![image](https://user-images.githubusercontent.com/45474081/128462478-46df621c-343d-4c3b-90f0-78c4f8c7c0d1.png)
 
 
-#### 버전 간 차이점
-  2020년 10월 이전에 납품된 모델은 v1.x  
-  2021년  8월 이전에 납품된 모델은 v2.x or v3.0  
-  2022년  1월 이후에 납품된 모델은 v3.2  
+#### HW버전 간 차이점
+  HW v1.x : 2020년 10월 이전에 납품된 모델로 단종  --> SW/FW 업데이트가 안됨.  
+  HW v2.x 이상 : --> SW/FW 업데이트 가능  
+  
 
-
-**Version 3.3**  
+**SW/FW Version 3.3**  
       FPGA Bitstream Date     : 20220421   
       FPGA Bitstream Version  : 00033000 (v3.3)   
       
-**Version 3.2**  
+**SW/FW Version 3.2**  
       FPGA Bitstream Date     : 20220317  
       FPGA Bitstream Version  : 00032000 (v3.2)
       
-**Version 3.0**  
+**SW/FW Version 3.0**  
       FPGA Bitstream Date     : 20210804  
       FPGA Bitstream Version  : 00030002 (v3.0)
       
-**Version 2.x**  
+**SW/FW Version 2.x**  
       FPGA Bitstream Date     : 20201013  
       FPGA Bitstream Version  : 10021000 (v2.1)
  
-**Version 1.x**  
+**SW/FW Version 1.x**  
       FPGA Bitstream Date     : 20201013  
       FPGA Bitstream Version  : 10011000  (v1.1)
 
 
-|버전|HW|점포패킷지원|PTPMaster|ClockCFG|etc|
+|FW/SW버전|HW버전|점포패킷지원|PTPMaster|ClockCFG|etc|
 |------|:---:|:---:|:---:|:---:|:---:|
 |1.x|v1.x|x|x|4v1| |
 |2.x|v2.0|x|x|4v1| | 
