@@ -13,7 +13,10 @@
 #### HW버전 간 차이점
   HW v1.x : 2020년 10월 이전에 납품된 모델로 단종  --> SW/FW 업데이트가 안됨.  
   HW v2.x 이상 : --> SW/FW 업데이트 가능  
-  
+
+**SW/FW Version 3.4**  
+      FPGA Bitstream Date     : 20220602   
+      FPGA Bitstream Version  : 94034000 (v3.4)     
 
 **SW/FW Version 3.3**  
       FPGA Bitstream Date     : 20220421   
